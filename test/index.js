@@ -1,8 +1,9 @@
-import assert from 'assert';
-import nodeBrest from '../lib';
+import chai from 'chai';
+// import nodeBrest from '../lib';
+chai.should();
 
 describe('node-brest', function () {
   it('should have unit test!', function () {
-    assert(false, 'we expected this package author to add actual unit tests.');
+    (1).should.equal(2);
   });
 });
