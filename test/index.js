@@ -1,9 +1,8 @@
 import chai from 'chai';
-// import nodeBrest from '../lib';
 chai.should();
 
+import nodeBrest from '../lib';
+
 describe('node-brest', function () {
-  it('should have unit test!', function () {
-    (1).should.equal(2);
-  });
+  // tests
 });
