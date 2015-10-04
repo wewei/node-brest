@@ -2,8 +2,13 @@ import chai from 'chai';
 const should = chai.should();
 
 import EntityType from "../../lib/core/entity-type";
+import { reset } from '../../lib/core/type-registry';
 
 describe('EntityType', function() {
+  
+  beforeEach(reset);
+  afterEach(reset);
+
   it('should exist', function() {
     should.exist(EntityType);
   });

@@ -3,8 +3,13 @@ import chai from 'chai';
 const should = chai.should();
 
 import Type from '../../lib/core/type';
+import { reset } from '../../lib/core/type-registry';
 
 describe('Type', function() {
+  
+  beforeEach(reset);
+  afterEach(reset);
+
   it('should exist', function() {
     should.exist(Type);
   });

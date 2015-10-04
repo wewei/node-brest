@@ -4,13 +4,14 @@ import ObjectType from '../../lib/core/object-type';
 import { reset } from '../../lib/core/type-registry';
 
 describe('ObjectType', function() {
-  it('should exist', function() {
-    should.exist(ObjectType);
-  });
 
   beforeEach(reset);
   afterEach(reset);
 
+  it('should exist', function() {
+    should.exist(ObjectType);
+  });
+  
   it('should create the type resolve properties correctly', function() {
     const bar = new ObjectType({
       namespace: 'NS',

@@ -6,6 +6,7 @@ import Type from '../../lib/core/type';
 import { reset } from '../../lib/core/type-registry';
 
 describe('Property', function() {
+  
   beforeEach(reset);
   afterEach(reset);
 

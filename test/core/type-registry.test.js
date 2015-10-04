@@ -10,6 +10,7 @@ import {
 import Type from '../../lib/core/type';
 
 describe('type-registry', function() {
+  
   it('should exist', function() {
     should.exist(register);
     should.exist(resolve);
