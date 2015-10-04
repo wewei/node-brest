@@ -6,7 +6,8 @@ import {
   defineConstProperty,
   defineConstProperties,
   defineGeneratedProperty,
-  defineGeneratedProperties
+  defineGeneratedProperties,
+  defineStagingProperty
 } from '../../lib/util/meta';
 
 describe('meta', function() {
@@ -103,6 +104,25 @@ describe('meta', function() {
       obj.prop2.should.equal('bar');
       should.throw(() => { obj.prop1 = 'bar'; });
       should.throw(() => { obj.prop2 = 'foo'; });
+    });
+  });
+
+  describe('defineStagingProperty', function() {
+    it('should exist', function() {
+      should.exist(defineStagingProperty);
+    });
+
+    it('should define properties and resolve properties correctly', function() {
+      let obj = {};
+      let value;
+      defineStagingProperty(obj, 'prop', 'foo', () => value).should.equal(obj);
+      should.exist(obj.prop);
+      obj.prop.should.equal('foo');
+      value = 'bar';
+      obj.prop.should.equal('bar');
+      value = 'foo';
+      obj.prop.should.equal('bar');
+      should.throw(() => { obj.prop = 'bar'; });
     });
   });
 });
