@@ -3,7 +3,8 @@ const should = chai.should();
 
 import {
   register,
-  resolve
+  resolve,
+  reset
 } from '../../lib/core/type-registry';
 
 import Type from '../../lib/core/type';
@@ -14,7 +15,8 @@ describe('type-registry', function() {
     should.exist(resolve);
   });
 
-  it('should register and resolve types correctly', function() {
+  it('should reset, register and resolve types correctly', function() {
+    reset();
     should.not.exist(resolve('foo.bar'));
     const type = new Type({
       namespace: 'foo',
@@ -22,5 +24,7 @@ describe('type-registry', function() {
     });
     should.exist(resolve('foo.bar'));
     resolve('foo.bar').should.equal(type);
+    reset();
+    should.not.exist(resolve('foo.bar'));
   });
 });
